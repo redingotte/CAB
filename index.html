@@ -166,6 +166,40 @@ div#firstView {
     }
 
 
+.category-header {
+    cursor: pointer;
+    background-color: #f0f0f0; /* Couleur de fond des titres */
+    padding: 10px; /* Espacement interne pour les titres */
+    border: 1px solid #ddd; /* Bordure des titres */
+    transition: background-color 0.3s ease-out; /* Animation de fond */
+}
+
+.category-header:hover {
+    background-color: #e9e9e9; /* Changement de couleur au survol */
+}
+
+.category-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* Animation de déroulement */
+}
+
+/* Ajoutez cette classe via JavaScript pour les catégories ouvertes */
+.category-content.open {
+    max-height: 500px; /* Hauteur maximale lors de l'ouverture */
+}
+
+.category-header::after {
+    content: '▼'; /* Flèche vers le bas */
+    float: right; /* Positionner la flèche à droite */
+    margin-right: 10px; /* Ajouter un peu d'espace à droite de la flèche */
+    transition: transform 0.3s ease-out; /* Animation pour la rotation de la flèche */
+}
+
+.category-header.open::after {
+    transform: rotate(-180deg); /* Retourner la flèche vers le haut quand la catégorie est ouverte */
+}
+
 
 </style>
 <link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
@@ -187,32 +221,76 @@ div#firstView {
     </header>
 
     <main>
-        <section>
-
-            <article>
-                <a href="calcul-imc.html"><h2>Calculateur d'IMC</h2></a>
-                <p>Surveillez votre santé avec notre calculateur d'Indice de Masse Corporelle. Entrez votre taille et votre poids et obtenez instantanément votre IMC ainsi que des conseils personnalisés.</p>
-            </article>
-
-            <article>
-                <a href="compte-a-rebours.html"><h2>Compte à Rebours Personnalisable</h2></a>
-                <p>Que ce soit pour un événement spécial ou pour la gestion du temps, notre compte à rebours personnalisable est l'outil parfait pour ne jamais manquer un moment important.</p>
-            </article>
-
-            <article>
-                <a href="km-en-miles.html"><h2>Conversion Kilomètres <-> Miles</h2></a>
-                <p>Idéal pour les géomètres ou pour tout type de mesure de distance.</p>
-            </article>
-
-            <article>
-                <a href="conversion-volume-ml-cl.html"><h2>Conversion d'unités de Volume</h2></a>
-                <p>Idéal pour la cuisine, convertissez des litres en ml, des ml en cl, des litres en mètres cubes etc....</p>
-            </article>
-
+        <section id="menu">
+            <div class="category">
+                <h3 class="category-header">Calcul</h3>
+                <div class="category-content">
+                    <article>
+                        <a href="calcul-imc.html"><h2>Calculateur d'IMC</h2></a>
+                        <p>Surveillez votre santé avec notre calculateur d'Indice de Masse Corporelle...</p>
+                    </article>
+                </div>
+            </div>
+            <div class="category">
+                <h3 class="category-header">Chronomètre</h3>
+                <div class="category-content">
+                    <article>
+                        <a href="compte-a-rebours.html"><h2>Compte à Rebours Personnalisable</h2></a>
+                        <p>Que ce soit pour un événement spécial ou pour la gestion du temps...</p>
+                    </article>
+                </div>
+            </div>
+            <div class="category">
+                <h3 class="category-header">Conversion</h3>
+                <div class="category-content">
+                    <article>
+                        <a href="km-en-miles.html"><h2>Conversion Kilomètres <-> Miles</h2></a>
+                        <p>Idéal pour les géomètres ou pour tout type de mesure de distance.</p>
+                    </article>
+                    <article>
+                        <a href="conversion-volume-ml-cl.html"><h2>Conversion d'unités de Volume</h2></a>
+                        <p>Idéal pour la cuisine, convertissez des litres en ml, des ml en cl...</p>
+                    </article>
+                </div>
+            </div>
         </section>
     </main>
+    
 
 		</div>
 	</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var headers = document.querySelectorAll('.category-header');
+
+            headers.forEach(function(header) {
+                header.addEventListener('click', function() {
+                    // On récupère le contenu suivant l'en-tête
+                    var content = this.nextElementSibling;
+
+                    // On vérifie si le contenu est déjà ouvert
+                    var isOpen = this.classList.contains('open');
+
+                    // On ferme toutes les catégories
+                    closeAllCategories();
+
+                    // Si la catégorie n'était pas ouverte, on l'ouvre maintenant
+                    if (!isOpen) {
+                        this.classList.add('open');
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+
+            function closeAllCategories() {
+                document.querySelectorAll('.category-header').forEach(function(header) {
+                    header.classList.remove('open');
+                    header.nextElementSibling.style.maxHeight = null;
+                });
+            }
+        });
+
+    </script>
 </body>
 </html>
