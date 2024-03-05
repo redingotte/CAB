@@ -239,8 +239,8 @@ article a:hover {
 			<div class="container">
 				<h2>Calculateur d'IMC</h2>
 			
-				<label for="height">Taille (en mètres):</label>
-				<input type="number" id="height" placeholder="Entrez votre taille en mètres" step="0.01" min="0.6" max="2.5">
+				<label for="height">Taille (en centimètres):</label>
+				<input type="number" id="height" placeholder="Entrez votre taille en centimètres" step="1" min="30" max="280">
 			
 				<label for="weight">Poids (en kilogrammes):</label>
 				<input type="number" id="weight" placeholder="Entrez votre poids en kilogrammes" step="1" min="20" max="1000">
@@ -285,7 +285,7 @@ article a:hover {
 			var weight = document.getElementById('weight').value;
 			
 			if (height > 0 && weight > 0) {
-				var bmi = weight / (height * height);
+				var bmi = weight * 10000 / (height * height);
 				document.getElementById('result').innerText = 'Votre IMC est : ' + bmi.toFixed(2);
 			} else {
 				document.getElementById('result').innerText = 'Veuillez entrer une taille et un poids valides.';
