@@ -321,7 +321,11 @@ div#BMR {
             var height = parseFloat(document.getElementById('height').value);
             var age = parseInt(document.getElementById('age').value);
             var gender = document.getElementById('gender').value;
+            var selectElement = document.getElementById('gender');
+            var genderLabel = selectElement.options[selectElement.selectedIndex].text;
             var activityLevel = parseFloat(document.getElementById('activityLevel').value);
+            var selectElement2 = document.getElementById('activityLevel');
+            var activityLevelLabel = selectElement2.options[selectElement2.selectedIndex].text;
             var bmr;
     
             if (gender === "male") {
@@ -331,14 +335,18 @@ div#BMR {
             }
     
             var totalCalories = bmr * activityLevel;
-            var resultText = `Votre besoin calorique quotidien est de <strong>${parseFloat(totalCalories.toFixed(0)).toLocaleString('fr-FR')} calories</strong>.`;
+            var resultText = `Votre besoin calorique quotidien est de <strong>${parseFloat(totalCalories.toFixed(0)).toLocaleString('fr-FR')} calories</strong>.<br><br>Profil : ${genderLabel} de ${age} ans ${activityLevelLabel} mesurant ${parseFloat(height.toFixed(2)/100).toLocaleString('fr-FR')}m et pesant ${parseFloat(weight.toFixed(0)).toLocaleString('fr-FR')}kg.`;
             
             // Vérifier si l'utilisateur a coché la case pour afficher le BMR seul
             if (document.getElementById('showBmr').checked) {
                 resultText += `<br>Votre BMR (métabolisme de base) est de <strong>${parseFloat(bmr.toFixed(0)).toLocaleString('fr-FR')} calories</strong> par jour.`;
             }
-    
-            document.getElementById('calorieResult').innerHTML = resultText;
+            if (weight && age && height) {
+                document.getElementById('calorieResult').innerHTML = resultText;
+            } else {
+                alert('Veuillez remplir les champs poids, taille et âge.');
+            }
+            
         }
     </script>
 </body>
