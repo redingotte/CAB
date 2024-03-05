@@ -273,6 +273,12 @@ article a:hover {
 	<a href="compte-a-rebours.html">Compte à rebours</a>
 	
 	<script>
+    document.addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Empêcher le comportement par défaut
+        calculateBMI(); // Lancer la conversion
+    }
+    });
 		// La fonction JavaScript qui calcule l'IMC
 		function calculateBMI() {
 			var height = document.getElementById('height').value;

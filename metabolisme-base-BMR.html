@@ -309,6 +309,13 @@ div#BMR {
 	<a href="index.html">Retour à l'accueil</a>
 	
     <script>
+            document.addEventListener('keydown', function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Empêcher le comportement par défaut
+                calculateCalories(); // Lancer la conversion
+            }
+            });
+
         function calculateCalories() {
             var weight = parseFloat(document.getElementById('weight').value);
             var height = parseFloat(document.getElementById('height').value);
@@ -324,11 +331,11 @@ div#BMR {
             }
     
             var totalCalories = bmr * activityLevel;
-            var resultText = `Votre besoin calorique quotidien est de ${totalCalories.toFixed(2)} calories.`;
+            var resultText = `Votre besoin calorique quotidien est de <strong>${parseFloat(totalCalories.toFixed(0)).toLocaleString('fr-FR')} calories</strong>.`;
             
             // Vérifier si l'utilisateur a coché la case pour afficher le BMR seul
             if (document.getElementById('showBmr').checked) {
-                resultText += `<br>Votre BMR (métabolisme de base) est de ${bmr.toFixed(2)} calories par jour.`;
+                resultText += `<br>Votre BMR (métabolisme de base) est de <strong>${parseFloat(bmr.toFixed(0)).toLocaleString('fr-FR')} calories</strong> par jour.`;
             }
     
             document.getElementById('calorieResult').innerHTML = resultText;
