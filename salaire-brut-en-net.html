@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Conversion Salaire Brut en Net</title>
+<meta name="google-adsense-account" content="ca-pub-6963111634176984">
+<meta name="keywords" content="conversion salaire brut net, calculateur salaire, calcul salaire net, brut en net, simulateur salaire">
+<meta name="description" content="Utilisez notre calculateur pour convertir facilement votre salaire brut en salaire net en France. Précis et à jour avec les dernières cotisations sociales.">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:url" content="https://123outils.fr/salaire-brut-en-net.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Conversion Salaire Brut en Net">
+<meta property="og:description" content="Convertissez rapidement et facilement votre salaire brut en salaire net en utilisant notre calculateur. À jour avec les dernières lois fiscales et cotisations sociales.">
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />
+<!-- Styles inchangés -->
+<style type="text/css">
+body {
+    font-family:Arial,Roboto,Calibri,Verdanna,sans-serif;
+    background: linear-gradient(to top,lightblue, lightpink);
+    background-repeat: no-repeat;
+    height: calc(100vh - 48px);
+    background-image: linear-gradient(to right, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.8); /* Transparence blanche pour bien lire le texte */
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 50%;
+  max-width: 500px; /* Ajustez la largeur maximale selon vos préférences */
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="number"] {
+  width: 100%; /* Pleine largeur */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #2ecc71; /* Vert */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Pleine largeur */
+}
+
+button:hover {
+  background-color: #27ae60; /* Vert plus foncé */
+}
+
+#result {
+    text-align: left;
+    margin-top: 24px;
+}
+
+#logo {
+    text-align: center;
+    width: 701px;
+    height: 84px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    height: auto;
+    margin: auto;
+}
+
+div#firstView {
+    display: flex;
+    height: 100vh;
+}
+div#article {
+    height: inherit;
+}
+
+/* Style pour l'article */
+article {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 24px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-top: 64px;
+    height: auto;
+}
+
+/* Styles pour les titres */
+h1 {
+    font-size: 24px;
+    color: #333333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eaeaea;
+    margin-bottom: 20px;
+    margin-top: 8px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #333333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style pour les paragraphes */
+p {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+/* Style pour les citations */
+blockquote {
+    border-left: 3px solid #eaeaea;
+    padding-left: 20px;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+/* Style pour les listes */
+ul {
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+/* Style pour les éléments de liste */
+li {
+    margin: 5px 0;
+}
+
+/* Style pour les éléments forts */
+strong {
+    color: #333333;
+}
+
+#CountdownPlace {
+    text-align: center;
+    width: 706px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+article {
+  background-color: rgba(255, 255, 255, 0.8); /* Pour l'effet de transparence */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  color: #6f1e51;; /* Une couleur qui correspond au dégradé de fond */
+}
+
+/* Met en évidence les citations ou passages importants */
+article blockquote {
+  border-left: 4px solid #6f1e51; /* Utilise une couleur tirée du dégradé de fond */
+  padding-left: 20px;
+  margin-left: 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* Stylise les paragraphes pour améliorer la lisibilité */
+article p {
+  margin-bottom: 1em;
+}
+
+/* Style pour les titres des sections */
+article h2 {
+  border-bottom: 1px solid #eae6e6; /* Ajoute une bordure pour séparer les sections */
+  padding-bottom: 0.5em;
+}
+
+/* Améliore l'apparence des éléments importants */
+article strong {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Ajoute un peu d'espace autour des éléments de la liste */
+article ul {
+  margin-bottom: 1em;
+}
+
+article li {
+  margin-bottom: 0.5em;
+}
+
+/* Améliorer le style des liens */
+article a {
+  color: #6f1e51;
+  text-decoration: none;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
+select#unitType {
+    padding: 2px;
+    margin: 10px;
+}
+
+div#BMR {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+div#brutnetdiv {
+    display: flex;
+}
+
+input[type="number"] {
+    width: 144px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+#CountdownPlace {
+    text-align: center;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+div#calculator {
+    display: flex;
+}
+#brutnetdiv label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+}
+</style>
+<link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6963111634176984"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04YK7BWEZN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-04YK7BWEZN');
+</script>
+</head>
+<body>
+    <div id="firstView">
+        <div id="CountdownPlace">
+            <div class="container">
+                <h1>Calcul du Salaire Brut en Net</h1>
+                <div id="calculator">
+                    <div id="netBeforeTax">
+                    <div id="brutnetdiv">
+                    <div id="brutdiv">
+                    <label for="brutHour">Horaire brut</label>
+                    <input type="number" id="brutHour" placeholder="0">
+                    
+                    <label for="brutMonthly">Mensuel brut</label>
+                    <input type="number" id="brutMonthly" placeholder="0">
+                    
+                    <label for="brutAnnual">Annuel brut</label>
+                    <input type="number" id="brutAnnual" placeholder="0">
+                    </div>
+                    <div id="netdiv">
+                    <!-- <h2>Résultat de votre salaire net</h2> -->
+                    <div class="result">
+                        <label for="netHour">Horaire net</label>
+                        <input type="number" id="netHour" placeholder="0">
+                    </div>
+                    <div class="result">
+                        <label for="netMonthly">Mensuel net</label>
+                        <input type="number" id="netMonthly" placeholder="0">
+                    </div>
+                    <div class="result">
+                        <label for="netAnnual">Annuel net</label>
+                        <input type="number" id="netAnnual" placeholder="0">
+                    </div>
+                </div>
+                 </div>
+                 <label for="status">Sélectionnez votre statut :</label>
+                 <select id="status">
+                     <option value="non-cadre">Salarié non-cadre</option>
+                     <option value="cadre">Salarié cadre</option>
+                     <option value="public">Fonction publique</option>
+                     <option value="independant">Profession libérale</option>
+                     <option value="portage">Portage salarial</option>
+                 </select>
+                 <!-- Champ pour sélectionner le nombre de mois de prime conventionnelle -->
+                <label for="bonusMonths">Sélectionnez le nombre de mois de prime conventionnelle:</label>
+                <select id="bonusMonths">
+                    <option value="12" selected>12 mois</option>
+                    <option value="13">13 mois</option>
+                    <option value="14">14 mois</option>
+                    <option value="15">15 mois</option>
+                    <option value="16">16 mois</option>
+                </select>
+
+                <!-- Champ pour sélectionner le temps de travail -->
+                <label for="workTime">Sélectionnez votre temps de travail:</label>
+                <input type="range" id="workTime" min="0" max="100" value="100"></input>
+                <span id="workTimeValue">100%</span>
+                </div>
+
+
+
+                <div id ="netAfterTax">
+                <label for="taxRate">Sélectionnez le taux de prélèvement à la source :</label>
+                <input type="range" id="taxRate" min="0" max="43" value="9,5">
+                <span id="taxRateValue">9,5%</span>
+                 <!-- Les résultats nets après impôts -->
+                 <div class="result">
+                     <label for="netMonthlyAfterTax">Mensuel net après impôts</label>
+                     <input type="number" id="netMonthlyAfterTax" placeholder="" readonly>
+                 </div>
+                 <div class="result">
+                     <label for="netAnnualAfterTax">Annuel net après impôts</label>
+                     <input type="number" id="netAnnualAfterTax" placeholder="" readonly>
+                 </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+	
+	<a href="index.html">Retour à l'accueil</a>
+
+    <div id="article">
+        <article>
+            <h1>Comprendre l'Imposition et le Calcul du Salaire Net à partir du Salaire Brut</h1>
+            <p>L'impôt sur le revenu est un élément incontournable de la vie professionnelle, impactant directement le montant que l'on perçoit effectivement après les déductions. La capacité à déterminer son salaire net à partir du salaire brut est cruciale pour gérer son budget personnel et faire des plans financiers. Cet article vous guide à travers les principes de l'imposition et la méthode de calcul pour convertir votre salaire brut en salaire net.</p>
+            
+            <h2>Qu'est-ce que l'Imposition ?</h2>
+            <p>L'imposition désigne le prélèvement d'une partie de vos revenus par l'État sous forme d'impôts. Ces prélèvements servent à financer les services publics, la sécurité sociale, l'éducation, et bien d'autres domaines essentiels à la société. Le montant de l'impôt varie selon plusieurs critères, notamment le revenu annuel, le statut familial, et d'autres déductions applicables.</p>
+            
+            <h2>Le Salaire Brut versus le Salaire Net</h2>
+            <p><strong>Salaire Brut</strong> : C'est le montant total de rémunération convenu avec l'employeur avant toute déduction. Il inclut le salaire de base, les primes, et tout autre avantage en nature.</p>
+            <p><strong>Salaire Net</strong> : C'est le montant qui vous est effectivement versé après déduction des charges sociales (cotisations retraite, sécurité sociale, etc.) et des impôts sur le revenu.</p>
+            
+            <h2>Comment Calculer le Salaire Net à partir du Salaire Brut ?</h2>
+            <p>1. <strong>Identifier les Charges Sociales</strong> : Le premier pas consiste à déduire les charges sociales du salaire brut. Ces charges varient selon le pays et le statut de l'emploi, mais elles financent généralement la retraite, l'assurance maladie, et d'autres protections sociales.</p>
+            <p>2. <strong>Déterminer le Taux d'Imposition</strong> : Le montant de l'impôt sur le revenu dépend de votre tranche d'imposition, qui est déterminée par votre revenu annuel. Certains pays utilisent un système progressif où le taux d'imposition augmente avec le revenu.</p>
+            <p>3. <strong>Calculer le Salaire Net</strong> : Une fois les charges sociales déduites du salaire brut, appliquez votre taux d'imposition pour estimer l'impôt sur le revenu. Le salaire net est obtenu en soustrayant cet impôt du montant restant.</p>
+            
+            <h2>Exemple de Calcul</h2>
+            <p>Supposons un salaire brut mensuel de 3 000 euros, avec 20% de charges sociales et un taux d'imposition de 15%.</p>
+            <ul>
+                <li>Charges Sociales = 3 000 * 20% = 600 euros</li>
+                <li>Salaire après charges sociales = 3 000 - 600 = 2 400 euros</li>
+                <li>Impôt sur le Revenu = 2 400 * 15% = 360 euros</li>
+                <li>Salaire Net = 2 400 - 360 = 2 040 euros</li>
+            </ul>
+            
+            <h2>Conclusion</h2>
+            <p>La compréhension de votre imposition et la capacité à calculer votre salaire net à partir du brut sont essentielles pour la gestion de vos finances personnelles. Bien que les taux et les méthodes de calcul puissent varier d'un pays à l'autre, les principes de base restent universels. Pour une estimation précise et des conseils personnalisés, il est toujours recommandé de consulter un professionnel ou d'utiliser des outils de calcul en ligne mis à jour selon la législation fiscale de votre pays.</p>
+        </article>
+    </div>
+	
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Déclarations des éléments du DOM
+            const brutHour = document.getElementById('brutHour');
+            const brutMonthly = document.getElementById('brutMonthly');
+            const brutAnnual = document.getElementById('brutAnnual');
+            const netHour = document.getElementById('netHour');
+            const netMonthly = document.getElementById('netMonthly');
+            const netAnnual = document.getElementById('netAnnual');
+            const statusSelect = document.getElementById('status');
+            const taxRate = document.getElementById('taxRate');
+            const taxRateDisplay = document.getElementById('taxRateValue');
+            const bonusMonthsSelect = document.getElementById('bonusMonths');
+            const workTimeSlider = document.getElementById('workTime');
+            const workTimeDisplay = document.getElementById('workTimeValue');
+            const netMonthlyAfterTax = document.getElementById('netMonthlyAfterTax');
+            const netAnnualAfterTax = document.getElementById('netAnnualAfterTax');
+
+            let lastModified = 'brutHour'; // Suivi du dernier champ modifié
+
+            // Fonction pour convertir brut en net
+            function convertBrutToNet(brut, socialChargesRate, taxRateValue, workTimePercentage) {
+                let net = brut * (1 - socialChargesRate) * workTimePercentage;
+                return parseFloat(net);
+            }
+
+            // Fonction pour convertir net en brut (Inverse de convertBrutToNet)
+            function convertNetToBrut(net, socialChargesRate, taxRateValue, workTimePercentage) {
+                let brut = net / ((1 - socialChargesRate) * workTimePercentage);
+                return parseFloat(brut);
+            }
+
+            // Fonction pour obtenir le taux de charges sociales
+            function getSocialChargesRate(status) {
+                const rates = {
+                    'non-cadre': 0.22,
+                    'cadre': 0.25,
+                    'public': 0.15,
+                    'independant': 0.45,
+                    'portage': 0.51,
+                };
+                return rates[status] || 0.22;
+            }
+
+            // Fonction pour mettre à jour tous les champs
+            function updateAllFields() {
+                const socialChargesRate = getSocialChargesRate(statusSelect.value);
+                const taxValue = parseFloat(taxRate.value);
+                const workTimePercentage = parseFloat(workTimeSlider.value) / 100;
+                const bonusMonths = parseFloat(bonusMonthsSelect.value);
+
+                let hourlyBrut, monthlyBrut, annualBrut;
+
+                if (lastModified.startsWith('net')) {
+                    // Calculer les valeurs brut à partir du net si le dernier modifié est un champ net
+                    const netValue = parseFloat(document.getElementById(lastModified).value) || 0;
+                    annualBrut = convertNetToBrut(netValue, socialChargesRate, taxValue, workTimePercentage) * 12;
+                    monthlyBrut = annualBrut / 12;
+                    hourlyBrut = monthlyBrut / 151.67; // Utiliser 151.67 comme nombre moyen d'heures par mois
+                } else {
+                    // Calculer les valeurs brut normalement si le dernier modifié est un champ brut
+                    switch (lastModified) {
+                        case 'brutHour':
+                            hourlyBrut = parseFloat(brutHour.value);
+                            monthlyBrut = hourlyBrut * 151.67;
+                            annualBrut = monthlyBrut * 12;
+                            break;
+                        case 'brutMonthly':
+                            monthlyBrut = parseFloat(brutMonthly.value);
+                            hourlyBrut = monthlyBrut / 151.67;
+                            annualBrut = monthlyBrut * 12;
+                            break;
+                        case 'brutAnnual':
+                            annualBrut = parseFloat(brutAnnual.value);
+                            monthlyBrut = annualBrut / 12;
+                            hourlyBrut = monthlyBrut / 151.67;
+                            break;
+                    }
+                }
+
+                // Mettre à jour les champs brut
+                brutHour.value = hourlyBrut.toFixed(2);
+                brutMonthly.value = monthlyBrut.toFixed(2);
+                brutAnnual.value = annualBrut.toFixed(2);
+
+                // Mettre à jour les champs net et net après impôt
+                const netHourValue = convertBrutToNet(hourlyBrut, socialChargesRate, taxValue, workTimePercentage);
+                const netMonthlyValue = convertBrutToNet(monthlyBrut, socialChargesRate, taxValue, workTimePercentage);
+                const netAnnualValue = convertBrutToNet(annualBrut, socialChargesRate, taxValue, workTimePercentage);
+
+                netHour.value = netHourValue.toFixed(2);
+                netMonthly.value = netMonthlyValue.toFixed(2);
+                netAnnual.value = netAnnualValue.toFixed(2);
+
+                netMonthlyAfterTax.value = (netMonthlyValue * (1 - taxValue / 100));
+                netAnnualAfterTax.value = (netAnnualValue * (1 - taxValue / 100));
+
+                // Mettre à jour les affichages
+                taxRateDisplay.textContent = `${taxValue}%`;
+                workTimeDisplay.textContent = `${workTimePercentage * 100}%`;
+            }
+
+            // Écouteurs d'événements pour les champs brut et net
+            [brutHour, brutMonthly, brutAnnual, netHour, netMonthly, netAnnual].forEach(input => {
+                input.addEventListener('change', (e) => {
+                    lastModified = e.target.id; // Mettre à jour le dernier champ modifié
+                    updateAllFields();
+                });
+
+                input.addEventListener('focus', function() {
+                    this.select();
+                });
+            });
+
+            // Écouteurs d'événements pour les sélecteurs et sliders
+            [statusSelect, taxRate, bonusMonthsSelect, workTimeSlider].forEach(input => {
+                input.addEventListener('input', updateAllFields);
+            });
+
+            taxRate.addEventListener('input', () => {
+                taxRateDisplay.textContent = `${taxRate.value}%`;
+            });
+
+            workTimeSlider.addEventListener('input', () => {
+                workTimeDisplay.textContent = `${workTimeSlider.value}%`;
+            });
+
+            updateAllFields(); // Mise à jour initiale
+        });
+
+        </script>
+</body>
+</html>
